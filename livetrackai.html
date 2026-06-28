@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery - TravelExplore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><i class="fa-solid fa-earth-americas"></i> Travel<span>Explore</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#packages">Packages</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+             <li><a href="planner.html">planner</a></li>
+              <li><a href="Livetrackai.html">livetrackai</a></li>
+
+        </ul>
+        <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fa-solid fa-moon" id="theme-icon"></i>
+</div>
+        <div class="nav-btn">
+            <a href="contact.html" class="btn-primary">Book Now</a>
+        </div>
+    </nav>
+</br>
+</br>
+<section id="live-tracker-section" class="tracker-section">
+    <div class="tracker-container">
+        <h2><i class="fa-solid fa-plane-departure"></i> Real-time Travel Status Tracker</h2>
+        <p class="tracker-subtitle">Enter your destination or ticket number to check mock real-time schedule</p>
+        
+        <div class="tracker-box">
+            <div class="tracker-input-group">
+                <select id="tracker-dest">
+                    <option value="Goa">Goa Flight (SG-201)</option>
+                    <option value="Himachal">Himachal Express Train (12401)</option>
+                    <option value="Kerala">Kerala Airways (AI-405)</option>
+                    <option value="Paris">Paris International Flight (AF-225)</option>
+                    <option value="Maldives">Maldives Island Hopper (MV-11)</option>
+                    <option value="Kyoto">Kyoto Bullet Train (SHIN-77)</option>
+                </select>
+                <button type="button" class="btn-track" onclick="startLiveTracking()">Check Live Status</button>
+            </div>
+
+            <div id="tracker-display" class="tracker-display-card" style="display: none;">
+                <div class="tracker-header">
+                    <span id="track-vehicle-name">Flight SG-201</span>
+                    <span id="track-badge" class="badge online">ON TIME</span>
+                </div>
+                
+                <div class="route-progress-bar">
+                    <div id="route-fill" class="route-fill-line"></div>
+                    <i id="route-icon" class="fa-solid fa-plane route-moving-icon"></i>
+                </div>
+
+                <div class="route-stations">
+                    <span id="route-start">Source (DEL)</span>
+                    <span id="route-end">Destination</span>
+                </div>
+
+                <div class="tracker-footer-status">
+                    <p><strong>Current Info:</strong> <span id="track-info-text">Searching satellite data...</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<section id="itinerary-section" style="padding: 60px 20px; text-align: center; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
+        
+        <h2 style="color: #0f172a; font-size: 28px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <span>🧠</span> AI Smart Itinerary Planner
+        </h2>
+        <p style="color: #64748b; font-size: 16px; margin-bottom: 30px;">Select your days and let our AI craft a personalized, day-by-day adventure timeline for you!</p>
+        
+        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); display: inline-flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; border: 1px solid #e2e8f0;">
+            <label style="color: #334155; font-weight: 600; font-size: 15px;">Duration:</label>
+            <select id="itinerary-days" style="padding: 10px 16px; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; font-weight: 500; outline: none; cursor: pointer; min-width: 150px;">
+                <option value="3">3 Days Trip</option>
+                <option value="5">5 Days Trip</option>
+            </select>
+            <button onclick="generateAIItinerary()" style="padding: 10px 24px; background: #00b4d8; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);">
+                Generate Plan ✨
+            </button>
+        </div>
+
+        <div id="itinerary-output" style="max-width: 650px; margin: 0 auto; text-align: left; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); display: none; border-left: 6px solid #00b4d8; animation: fadeIn 0.5s ease;">
+            <h3 id="itinerary-title" style="color: #0f172a; font-size: 20px; font-weight: 700; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px;"></h3>
+            <div id="itinerary-timeline" style="color: #334155; font-size: 15px; line-height: 1.8; letter-spacing: 0.3px;"></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="itinerary-section">
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 TravelExplore. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+

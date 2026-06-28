@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TravelExplore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><i class="fa-solid fa-earth-americas"></i> Travel<span>Explore</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#packages">Packages</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li> 
+            <li><a href="planner.html">planner</a></li>
+              <li><a href="gallary.html">gallary</a></li>
+             <li><a href="Livetrackai.html">Livetrackai</a></li>
+        </ul>
+        <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fa-solid fa-moon" id="theme-icon"></i>
+</div>
+        <div class="nav-btn">
+            <a href="contact.html" class="btn-primary">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="contact-section" style="margin-top: 100px;"> <h2 class="section-title">Plan Your Dream Trip Now</h2>
+        <div class="contact-container">
+            <form class="booking-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Select Destination</option>
+                        <option value="goa">Goa</option>
+                        <option value="himachal">Himachal</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="paris">Paris</option>
+                        <option value="maldives">Maldives</option>
+                        <option value="kyoto">Kyoto</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 TravelExplore. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

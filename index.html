@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelExplore - Wanderlust</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="#"><i class="fa-solid fa-earth-americas"></i> Travel<span>Explore</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="gallary.html">gallary</a></li>
+             <li><a href="planner.html">planner</a></li>
+             <li> <a href="livetrackai.html">LiveTrack AI ⚡</a></li>
+        </ul>
+        <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fa-solid fa-moon" id="theme-icon"></i>
+</div>
+            <div class="nav-btn">
+           <a href="#booking-modal" class="btn-primary">Book Now</a>
+           </div>
+        
+    </nav>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>EXPLORE THE BEAUTIFUL WORLD</h1>
+            <p>Journey through the world's most beautiful places with us. Book your next adventure today!</p>
+        
+            <div class="search-bar-container">
+        <div class="search-input">
+            <label><i class="fa-solid fa-location-dot"></i> Where to?</label>
+            <input type="text" placeholder="Enter destination...">
+        </div>
+        <div class="search-input">
+            <label><i class="fa-solid fa-calendar-days"></i> When?</label>
+            <input type="date">
+        </div>
+        <div class="search-input">
+            <label><i class="fa-solid fa-wallet"></i> Budget</label>
+            <select>
+                <option value="">Select Budget</option>
+                <option value="low">₹10k - ₹20k</option>
+                <option value="med">₹20k - ₹50k</option>
+                <option value="high">₹50k+</option>
+            </select>
+        </div>
+        <button class="btn-search">Search</button>
+    </div>
+               <a href="#packages" class="btn-discover">Discover Places</a>
+        </div>
+    </section> 
+
+     <section id="packages" class="packages-section">
+        <h2 class="section-title">Our Popular Packages</h2>
+        <div class="packages-container">
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" alt="Goa">
+                </div>
+                <div class="package-info">
+                    <h3>Goa Beach Tour</h3>
+                    <p>Enjoy the beautiful beaches, nightlife, and seafood of Goa.</p>
+                    <div class="price">₹14,999 <span>/ Person</span></div>
+                    <button class="btn-scan-trigger" onclick="openScanner('Goa')">
+                        <i class="fa-solid fa-expand"></i> Scan History
+                    </button>
+                    <!-- <a href="#booking-modal" class="btn-card" onclick="setDestination('beach tour')">Explore More</a> -->
+                    <!-- <a href="#budget-calculator" class="btn-card" onclick="setDestination('beach tour')">Explore More</a> -->
+                      <!-- <a href="#booking-modal" class="btn-card" onclick="setDestination('goa')">Book Now</a> -->
+                      <a href="#booking-modal" class="btn-explore" onclick="setDestination('Goa')">Explore More</a>
+
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?auto=format&fit=crop&w=500&q=80" alt="Himachal">
+                    
+                </div>
+                <div class="package-info">
+                    <h3>Himachal Adventure</h3>
+                    <p>Manali aur Shimla ke barfeele pahado me trekking aur adventure.</p>
+                    <div class="price">₹19,999 <span>/ Person</span></div>
+                    <button class="btn-scan-trigger" onclick="openScanner('Himachal')">
+                        <i class="fa-solid fa-expand"></i> Scan History
+                    </button>
+                    <!-- <a href="#booking-modal" class="btn-card" onclick="setDestination('mountain tour')">Explore More</a> -->
+                    
+                    <!-- <a href="#booking-modal" class="btn-card" onclick="setDestination('himachal')">Book Now</a> -->
+                    <a href="#booking-modal" class="btn-explore" onclick="setDestination('Himachal')">Explore More</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=500&q=80" alt="Kerala">
+                </div>
+                <div class="package-info">
+                    <h3>Kerala Backwaters</h3>
+                    <p>Kerala ki haryali aur shaant jheelo me houseboat ka anand lein.</p>
+                    <div class="price">₹24,999 <span>/ Person</span></div>
+                    <button class="btn-scan-trigger" onclick="openScanner('Kerala')">
+                        <i class="fa-solid fa-expand"></i> Scan History
+                    </button>
+                    <a href="#booking-modal" class="btn-card" onclick="setDestination('Kerala')">Explore More</a>
+                    
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=500&q=80" alt="Paris">
+                </div>
+                <div class="package-info">
+                    <h3>Paris Getaway</h3>
+                    <p>Experience the romance, Eiffel Tower, and art museums of Paris.</p>
+                    <div class="price">₹85,000 <span>/ Person</span></div>
+                    <button class="btn-scan-trigger" onclick="openScanner('Paris')">
+                        <i class="fa-solid fa-expand"></i> Scan History
+                    </button>
+                    <!-- <a href="#booking-modal" class="btn-card" onclick="setDestination('Paris')">Explore More</a> -->
+                    <!-- <a href="#budget-calculator" class="btn-card" onclick="setDestination('Paris')">Explore More</a> -->
+                    <a href="#booking-modal" class="btn-card" onclick="setDestination('paris')">Book Now</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=80" alt="Maldives">
+                </div>
+                <div class="package-info">
+                    <h3>Maldives Luxury</h3>
+                    <p>Stay in overwater villas and explore crystal clear blue lagoons.</p>
+                    <div class="price">₹65,000 <span>/ Person</span></div>
+                    <button class="btn-scan-trigger" onclick="openScanner('Maldives')">
+                        <i class="fa-solid fa-expand"></i> Scan History
+                    </button>
+                    <a href="#booking-modal" class="btn-card" onclick="setDestination('Maldives')">Explore More</a>
+                   
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80" alt="Kyoto">
+                </div>
+                <div class="package-info">
+                    <h3>Kyoto Cultural Tour</h3>
+                    <p>Visit historic shrines, traditional tea houses, and bamboo forests.</p>
+                    <div class="price">₹75,000 <span>/ Person</span></div>
+                    <button class="btn-scan-trigger" onclick="openScanner('Kyoto')">
+                        <i class="fa-solid fa-expand"></i> Scan History
+                    </button>
+                    <a href="#booking-modal" class="btn-card" onclick="setDestination('Kyoto')">Explore More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="faq-section" id="faqs">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <input type="checkbox" id="faq1" class="faq-toggle">
+                <label for="faq1" class="faq-question">
+                    What is included in the tour packages?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div class="faq-answer">
+                    <p>Our packages generally include luxury accommodation, daily breakfast, local sightseeing in private cabs, and tour guide fees. Flight tickets can be added upon request.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq2" class="faq-toggle">
+                <label for="faq2" class="faq-question">
+                    What is your cancellation and refund policy?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div class="faq-answer">
+                    <p>You can cancel your booking up to 7 days before the departure date for a full 100% refund. Cancellations made within 7 days will incur a 50% retention charge.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq3" class="faq-toggle">
+                <label for="faq3" class="faq-question">
+                    Do I need a passport/visa for international trips?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </label>
+                <div class="faq-answer">
+                    <p>Yes, for international destinations like Paris or Maldives, a passport with at least 6 months validity is required. We also provide complete assistance for visa processing.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<section class="weather-section" id="weather-status">
+        <h2 class="section-title">Current Destination Status</h2>
+        <p class="section-subtitle">Check the current weather and travel suitability before you pack your bags!</p>
+        
+        <div class="weather-container">
+            
+            <div class="weather-card safe" onclick="checkWeatherAlert('Goa', 'safe')">
+                <div class="card-badge">Best Time to Visit</div>
+                <h3><i class="fa-solid fa-location-dot"></i> Goa</h3>
+                <div class="weather-info">
+                    <i class="fa-solid fa-cloud-sun weather-icon"></i>
+                    <span class="temp">30°C</span>
+                </div>
+                <p class="weather-desc">Partly Cloudy & Pleasant</p>
+                <div class="status-indicator">
+                    <span class="dot"></span> Status: Open for Tourism
+                </div>
+            </div>
+
+            <div class="weather-card warning" onclick="checkWeatherAlert('Himachal', 'warning')">
+                <div class="card-badge">Monsoon Alert</div>
+                <h3><i class="fa-solid fa-location-dot"></i> Himachal</h3>
+                <div class="weather-info">
+                    <i class="fa-solid fa-cloud-showers-heavy weather-icon"></i>
+                    <span class="temp">18°C</span>
+                </div>
+                <p class="weather-desc">Heavy Rainfall In Hills</p>
+                <div class="status-indicator">
+                    <span class="dot"></span> Status: Restricted Routes
+                </div>
+            </div>
+
+            <div class="weather-card safe" onclick="checkWeatherAlert('Paris', 'safe')">
+                <div class="card-badge">Perfect Season</div>
+                <h3><i class="fa-solid fa-location-dot"></i> Paris</h3>
+                <div class="weather-info">
+                    <i class="fa-solid fa-sun weather-icon"></i>
+                    <span class="temp">22°C</span>
+                </div>
+                <p class="weather-desc">Sunny & Clear Sky</p>
+                <div class="status-indicator">
+                    <span class="dot"></span> Status: Open for Tourism
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+     <section class="testimonials-section" id="reviews">
+        <h2 class="section-title">What Our Travelers Say</h2>
+        <p class="section-subtitle">Real stories from real travelers who explored the world with us.</p>
+        
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="user-info">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="User 1">
+                    <div>
+                        <h4>Anjali Sharma</h4>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Mera Paris ka trip ekdum kamaal ka tha! Everything from hotel bookings to the tour guide was well managed. Highly recommended!"</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="user-info">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="User 2">
+                    <div>
+                        <h4>Rohan Verma</h4>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Goa ka package bohot budget-friendly tha. Private cab service on-time thi aur hotels bhi bohot clean aur safe the. 4.5 stars from my side!"</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="user-info">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="User 3">
+                    <div>
+                        <h4>Priya Rai</h4>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Manali me trekking ka experience behtareen tha. TravelExplore team ne safety ka bohot dhyan rakha. Agla trip bhi inhi ke saath book karungi."</p>
+            </div>
+        </div>
+    </section>
+
+    
+ <!-- <section id="live-tracker-section" class="tracker-section">
+    <div class="tracker-container">
+        <h2><i class="fa-solid fa-plane-departure"></i> Real-time Travel Status Tracker</h2>
+        <p class="tracker-subtitle">Enter your destination or ticket number to check mock real-time schedule</p>
+        
+        <div class="tracker-box">
+            <div class="tracker-input-group">
+                <select id="tracker-dest">
+                    <option value="Goa">Goa Flight (SG-201)</option>
+                    <option value="Himachal">Himachal Express Train (12401)</option>
+                    <option value="Kerala">Kerala Airways (AI-405)</option>
+                    <option value="Paris">Paris International Flight (AF-225)</option>
+                    <option value="Maldives">Maldives Island Hopper (MV-11)</option>
+                    <option value="Kyoto">Kyoto Bullet Train (SHIN-77)</option>
+                </select>
+                <button type="button" class="btn-track" onclick="startLiveTracking()">Check Live Status</button>
+            </div>
+
+            <div id="tracker-display" class="tracker-display-card" style="display: none;">
+                <div class="tracker-header">
+                    <span id="track-vehicle-name">Flight SG-201</span>
+                    <span id="track-badge" class="badge online">ON TIME</span>
+                </div>
+                
+                <div class="route-progress-bar">
+                    <div id="route-fill" class="route-fill-line"></div>
+                    <i id="route-icon" class="fa-solid fa-plane route-moving-icon"></i>
+                </div>
+
+                <div class="route-stations">
+                    <span id="route-start">Source (DEL)</span>
+                    <span id="route-end">Destination</span>
+                </div>
+
+                <div class="tracker-footer-status">
+                    <p><strong>Current Info:</strong> <span id="track-info-text">Searching satellite data...</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+<section id="itinerary-section" style="padding: 60px 20px; text-align: center; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
+        
+        <h2 style="color: #0f172a; font-size: 28px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <span>🧠</span> AI Smart Itinerary Planner
+        </h2>
+        <p style="color: #64748b; font-size: 16px; margin-bottom: 30px;">Select your days and let our AI craft a personalized, day-by-day adventure timeline for you!</p>
+        
+        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); display: inline-flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; border: 1px solid #e2e8f0;">
+            <label style="color: #334155; font-weight: 600; font-size: 15px;">Duration:</label>
+            <select id="itinerary-days" style="padding: 10px 16px; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; font-weight: 500; outline: none; cursor: pointer; min-width: 150px;">
+                <option value="3">3 Days Trip</option>
+                <option value="5">5 Days Trip</option>
+            </select>
+            <button onclick="generateAIItinerary()" style="padding: 10px 24px; background: #00b4d8; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);">
+                Generate Plan ✨
+            </button>
+        </div>
+
+        <div id="itinerary-output" style="max-width: 650px; margin: 0 auto; text-align: left; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); display: none; border-left: 6px solid #00b4d8; animation: fadeIn 0.5s ease;">
+            <h3 id="itinerary-title" style="color: #0f172a; font-size: 20px; font-weight: 700; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px;"></h3>
+            <div id="itinerary-timeline" style="color: #334155; font-size: 15px; line-height: 1.8; letter-spacing: 0.3px;"></div>
+        </div>
+
+    </div>
+</section>
+     -->
+<!-- <section id="packing-section" style="padding: 60px 20px; text-align: center; background: #ffffff;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; border-radius: 16px; background: #f8fafc; border: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+        
+        <h3 style="color: #0f172a; font-size: 22px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            🎒 Smart Packing Assistant
+        </h3>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Auto-generated essentials based on your selected destination.</p>
+        
+        <div id="packing-list" style="text-align: left; margin: 0 auto; max-width: 400px; display: flex; flex-direction: column; gap: 12px;">
+            <p style="color: #94a3b8; text-align: center; font-style: italic;">Select a destination in the planner above to see your checklist!</p>
+        </div>
+        
+    </div>
+</section>
+<section id="map-section" style="padding: 40px 20px; text-align: center; background: #f8fafc;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <h3 style="color: #0f172a; font-size: 22px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            🗺️ Live Destination Explorer
+        </h3>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Explore your selected destination live on the interactive map below.</p>
+        
+        <div id="live-map" style="width: 100%; height: 400px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); z-index: 1;"></div>
+    </div>
+</section> -->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 TravelExplore. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+     <div id="booking-modal" class="modal-overlay">
+        <div class="modal-card">
+            <a href="#" class="close-btn">&times;</a>
+            <h2>Book Your Dream Adventure</h2>
+            <p style="font-size: 13px; color: #666; margin-bottom: 20px;">Fill out this form and our travel expert will contact you within 24 hours.</p>
+            
+            <form class="modal-form">
+                <div class="modal-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="modal-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="modal-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Enter your phone number" required>
+                </div>
+                
+                <div class="modal-group">
+                    <label>Select Destination</label>
+                    <select id="modal-select" required>
+                        <option value="" disabled selected>Select your destination</option>
+                        <option value="Goa">Goa Sun-Kissed Beaches</option>
+                        <option value="Himachal">Himachal Hills & Adventure</option>
+                        <option value="Paris">Paris Getaway</option>
+                        <option value="Kerala">Kerala Backwaters</option>
+                        <option value="Maldives">Maldives Luxury</option>
+                        <option value="Kyoto">Kyoto Culture</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-confirm">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-modal" class="success-overlay" style="display: none;">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            <p class="success-greet">Thank you, <strong id="pop-name">User</strong>!</p>
+            
+            <div class="receipt-details">
+                <p><strong>Destination:</strong> <span id="pop-dest">Goa</span></p>
+                <p><strong>Status:</strong> <span class="badge-success">Provisionally Booked</span></p>
+            </div>
+            
+            <p class="success-note">📩 A confirmation email has been dispatched. Our travel manager will connect with you within 24 hours.</p>
+            
+            <button type="button" class="btn-success-close" onclick="closeSuccessModal()">Great, Thanks!</button>
+        </div>
+    </div>
+     <div id="scanner-modal" class="scanner-overlay" style="display: none;">
+    <div class="scanner-container">
+        <span class="scanner-close" onclick="closeScanner()">&times;</span>
+        <h3><i class="fa-solid fa-camera"></i> AI Travel Scanner</h3>
+        <p class="scanner-subtitle">Point at a mountain or monument to scan historical details</p>
+        
+        <div class="camera-view">
+            <video id="webcam" autoplay playsinline></video>
+            <div class="scan-laser"></div>
+            <div class="scan-target"></div>
+        </div>
+
+        <div id="scan-status" class="scan-status-text">Ready to scan...</div>
+
+        <div id="scan-result" class="scan-result-card" style="display: none;">
+            <h4 id="res-title">Himachal Mountains</h4>
+            <p class="res-meta"><strong>Location:</strong> <span id="res-loc">India</span> | <strong>Elevation:</strong> <span id="res-height">6,000m</span></p>
+            <hr>
+            <p id="res-history" class="res-desc">Loading historical facts...</p>
+        </div>
+    </div>
+</div>
+<!-- ================= AI AR MONUMENT SCANNER ================= -->
+<div id="scanner-modal" class="scanner-overlay" style="display: none;">
+    <div class="scanner-container">
+        <span class="scanner-close" onclick="closeScanner()">&times;</span>
+        <h3><i class="fa-solid fa-camera"></i> AI Travel Scanner</h3>
+        <p class="scanner-subtitle">Point at a mountain or monument to scan historical details</p>
+        
+        <div class="camera-view">
+            <video id="webcam" autoplay playsinline></video>
+            <div class="scan-laser"></div>
+            <div class="scan-target"></div>
+        </div>
+
+        <div id="scan-status" class="scan-status-text">Ready to scan...</div>
+
+        <!-- Dynamic Historical Result Card -->
+        <div id="scan-result" class="scan-result-card" style="display: none;">
+            <h4 id="res-title">Himachal Mountains</h4>
+            <p class="res-meta"><strong>Location:</strong> <span id="res-loc">India</span> | <strong>Elevation:</strong> <span id="res-height">6,000m</span></p>
+            <hr>
+            
+            <p id="res-history" class="res-desc">Loading historical facts...</p>
+            
+            <!-- 🌟 EXACT PLACE: Is line ke theek niche ye audio widget paste kijiye 🌟 -->
+            <div class="audio-player-widget">
+                <div class="player-controls">
+                    <button type="button" id="audio-play-btn" onclick="toggleAudioGuide()">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <div class="audio-progress-container" onclick="seekAudio(event)">
+                        <div id="audio-progress-bar" class="audio-progress"></div>
+                    </div>
+                    <span id="audio-time">00:00</span>
+                </div>
+                <p class="audio-status-text">🔊 Click to listen to AI Audio Guide</p>
+            </div>
+            <!-- 🌟 Audio Widget yahan khatam hua 🌟 -->
+
+        </div> <!-- /scan-result card ends -->
+    </div>
+</div>
+<!-- <p id="res-history" class="res-desc">Loading historical facts...</p>
+        
+        <div class="audio-player-widget">
+            <div class="player-controls">
+                <button type="button" id="audio-play-btn" onclick="toggleAudioGuide()">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <div class="audio-progress-container" onclick="seekAudio(event)">
+                    <div id="audio-progress-bar" class="audio-progress"></div>
+                </div>
+                <span id="audio-time">00:00</span>
+            </div>
+            <p class="audio-status-text">🔊 Click to listen to AI Audio Guide</p>
+        </div>
+        -->
+
+
+    <script>
+        function setDestination(destinationValue) {
+            // Dropdown element ko dhoondhna
+            var selectDropdown = document.getElementById('modal-select');
+            
+            if (selectDropdown) {
+                // Dropdown ki value ko click kiye gaye card ke mutabik set karna
+                selectDropdown.value = destinationValue;
+            }
+        }
+
+        // Purana setDestination wala function wahan pehle se rahega...
+
+        // NAYA FUNCTION: Weather card click karne par advisory dikhane ke liye
+        function checkWeatherAlert(destination, status) {
+            if(status === 'safe') {
+                alert("☀️ " + destination + " Status: Weather is absolutely perfect! Hotels and flights are operating normally. Safe to travel!");
+            } else if(status === 'warning') {
+                alert("⚠️ " + destination + " Travel Advisory: Heavy rain alert! Roadways might be delayed. Please contact our 24/7 support team before planning your journey.");
+            }
+        }
+   // 3. Light/Dark Mode Toggle karne wala function
+        function toggleTheme() {
+            // Body par .dark-mode class ko lagana ya hatana
+            document.body.classList.toggle('dark-mode');
+            
+            // Icon ko Moon se Sun me badalna
+            var themeIcon = document.getElementById('theme-icon');
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeIcon.style.color = '#f1c40f'; /* Sun ka color yellow */
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeIcon.style.color = '#ffffff'; /* Moon ka color white */
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
